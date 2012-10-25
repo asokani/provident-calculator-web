@@ -48,11 +48,11 @@
 
       Calculator.prototype.table_space_string = "<div class=\"row cols-1\">\n  <div class=\"container col1\" id=\"result-table-space\">\n\n  </div>\n</div>";
 
-      Calculator.prototype.table_string = "<table style=\"width:100%\">\n   <tr>\n     <th>Typ půjčky</th>\n     <th>Výše půjčky</th>\n     <th>Doba splácení (týdnů)</th>\n     <th>Týdenní splátka</th>\n     <th>Celkové náklady</th>\n     <th>RPSN</th>\n     <th>Poplatek za hotovostní inkasní službu</th>\n     <th colspan=\"2\">Celkem ke splacení</th>\n   </tr>\n   _ROW\n</table>";
+      Calculator.prototype.table_string = "<div id=\"loan-type-text\">\n    Vybral/a jste si _LOAN_TYPE_TEXT půjčku ve výši _ISSUE_VALUE.\n</div>\n<table style=\"width:100%\">\n   <tr>\n     <th style=\"width:10%\">Typ půjčky <a data-name=\"type\" class=\"help\" href=\"#\"></a></th>\n     <th style=\"width:15%\">Výše půjčky <a data-name=\"loan\" class=\"help\" href=\"#\"></a></th>\n     <th style=\"width:10%\">Doba splácení (týdnů) <a data-name=\"weeks\" class=\"help\" href=\"#\"></a></th>\n     <th style=\"width:13%\">Týdenní splátka <a data-name=\"week\" class=\"help\" href=\"#\"></a></th>\n     <th style=\"width:12%\">Celkové náklady</th>\n     <th style=\"width:10%\">RPSN <a data-name=\"apr\" class=\"help\" href=\"#\"></a></th>\n     <th style=\"width:10%\">Poplatek za hotovostní inkasní službu <a data-name=\"cash\" class=\"help\" href=\"#\"></a></th>\n     <th colspan=\"2\" style=\"width:20%\">Celkem ke splacení <a data-name=\"total\" class=\"help\" href=\"#\"></a></th>\n   </tr>\n   _ROW\n</table>";
 
-      Calculator.prototype.row_string = "<tr>\n  <td>_LOAN_TYPE</td>\n  <td style=\"color: #0059A1;font-size: 21px;font-weight: bold;text-align: center;\">_ISSUE_VALUE</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_WEEKS</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_INSTALMENT</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_INTEREST_PLUS_FEE</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_APR</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_FEE_CASH</td>\n  <td style=\"font-weight: bold;font-size:18px;text-align:center;color: #0059A1;\">_TOTAL</td>\n  <td></td>\n</tr>";
+      Calculator.prototype.row_string = "<tr>\n  <td>_LOAN_TYPE</td>\n  <td style=\"color: #0059A1;font-size: 21px;font-weight: bold;text-align: center;\">_ISSUE_VALUE</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_WEEKS</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_INSTALMENT <a data-values=\"_INSTALMENT_LAST\" data-name=\"weekinst\" class=\"help\" href=\"#\"></a></td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_INTEREST_PLUS_FEE <a data-values=\"_DETAILED_FEES\" data-name=\"intplusfee\" class=\"help\" href=\"#\"></a></td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_APR</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_FEE_CASH</td>\n  <td style=\"font-weight: bold;font-size:18px;text-align:center;color: #0059A1;\">_TOTAL</td>\n  <td>_CHOOSE</td>\n</tr>";
 
-      Calculator.prototype.slider_string = "<p style=\"margin:0.5em 0 1em;color: #0059A1;font-size: 18px;\">Zvolte si výši půjčky</p>\n<div style=\"padding:70px 0 0 0;position:relative;\" id=\"money-slider-holder\">\n  <div style=\"position:absolute;height:0;\" id=\"money-bubble-value\">\n    <div style=\"background: #E42C2A;color:white;font-size: 1.5em;cursor:move;white-space:nowrap;position:relative;left:-50%;border-radius:5px;padding:10px;top:-65px;\">\n    	 <span class=\"value\"></span>\n    </div>\n  <div style=\"position:absolute;top:-30px;left:-8px;width: 0;height: 0;	border-left: 8px solid transparent; border-right: 8px solid transparent;border-top: 12px solid #E42C2A;\"></div>\n  </div>\n  <div class=\"money-slider\"></div>\n</div>\n<p style=\"margin:0.5em 0 1em;color: #0059A1;font-size: 18px;padding:30px 0 0 0;\">Zvolte si formu své půjčky</p>\n<div style=\"\">\n  <div style=\"padding:5px 0;\">\n    <input checked=\"checked\" id=\"non-money-transfer\" value=\"0\" type=\"radio\" name=\"transfer-type\" /> <label for=\"non-money-transfer\">Bezhotovostní půjčka</label>\n  </div>\n  <div style=\"padding:5px 0;\">\n    <input id=\"money-transfer\" value=\"1\"  type=\"radio\" name=\"transfer-type\" /> <label for=\"money-transfer\">Hotovostní půjčka</label>\n  </div>\n</div>";
+      Calculator.prototype.slider_string = "<p style=\"margin:0.5em 0 1em;color: #0059A1;font-size: 18px;\">Zvolte si výši půjčky</p>\n<div style=\"\" id=\"money-slider-holder\">\n  <div style=\"position:absolute;height:0;\" id=\"money-bubble-value\">\n    <div style=\"background: #E42C2A;color:white;font-size: 1.5em;cursor:move;white-space:nowrap;position:relative;left:-50%;border-radius:5px;padding:10px;top:-65px;\">\n    	 <span class=\"value\"></span>\n    </div>\n  <div style=\"position:absolute;top:-30px;left:-8px;width: 0;height: 0;	border-left: 8px solid transparent; border-right: 8px solid transparent;border-top: 12px solid #E42C2A;\"></div>\n  </div>\n  <div class=\"money-slider\"></div>\n  <div style=\"float:left;margin:8px 0 0 0;\">4 000 Kč</div>\n  <div style=\"float:right;margin:8px 0 0 0;\">80 000 Kč</div>\n\n\n</div>\n<div id=\"custom-dip-filter\">\n  <div id=\"custom-filters\" style=\"float:none;\">\n    <div id=\"custom-filter-bar\" class=\"clearfix\">\n      <div>\n        <span class=\"label\">Zvolte si formu své půjčky <div class=\"help\"><p>Pro zobrazení výpočtu parametrů půjčky si zvolte způsob doručení a splácení peněz</p></div></span>\n        <ul style=\"margin-bottom:20px\">\n          <li style=\"width: 233px;\">\n            <input checked=\"checked\" type=\"radio\" id=\"custom-filter-home-collect\" name=\"filters\" value=\"HomeCollect\">\n            <label for=\"custom-filter-home-collect\" id=\"custom-filter-bank-transfer-label\">Hotovostní\n            </label>\n            <div class=\"about\"><ul class=\"bullets\"><li>Hotovost do 48 hodin.</li><li>Peníze do vlastních rukou při podpisu smlouvy.</li><li>Maximální komfort, vše vyřešíte z domova.</li><li>Splátky osobně obchodnímu zástupce.</li></ul></div>\n          </li>\n          <li style=\"width: 233px;\">\n            <input type=\"radio\" id=\"custom-filter-bank-transfer\" name=\"filters\" value=\"BankTransfer\">\n            <label for=\"custom-filter-bank-transfer\" id=\"custom-filter-home-collect-label\">Bezhotovostní\n            </label>\n            <div class=\"about\"><ul class=\"bullets\"><li>Peníze nejpozději do 13 dnů.</li><li>Peníze získáte na bankovní účet.</li><li>Maximální komfort a soukromí.</li><li>Bezhotovostní způsob splácení.</li>\n            </ul></div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>";
 
       function Calculator() {
         this.onmousemove = __bind(this.onmousemove, this);
@@ -62,6 +62,8 @@
         this.onmousedown = __bind(this.onmousedown, this);
 
         this.onslide = __bind(this.onslide, this);
+
+        var _this = this;
         this.init_table();
         jQuery(".cols-2-wide .col1").append(this.slider_string);
         jQuery(".cols-2-wide").after(this.table_space_string);
@@ -70,54 +72,22 @@
           min: 0,
           max: 61
         });
+        jQuery('head').append('<link rel="stylesheet" href="https://providentonline.cz/provident-remote-calc/style.css" type="text/css" />');
         jQuery(".money-slider").append('<div id="money-slider-fill" style="border-radius:5px;background:#df0909;opacity:0.6;position:absolute;top:0;z-index:5;width:0px;height:10px"></div>');
-        jQuery(".money-slider").css({
-          "width": "100%",
-          "height": "10px",
-          "border": "1px solid #b1b1b1",
-          "position": "relative",
-          "border-radius": "5px",
-          "background": "#cbcbcb"
-        }).css({
-          "background": "-moz-linear-gradient(top, #cbcbcb 0%, #fbfbfb 100%)"
-        }).css({
-          "background": "-webkit-gradient(linear, left top, left bottom, color-stop(0%,#cbcbcb), color-stop(100%,#fbfbfb))"
-        }).css({
-          "background": "-webkit-linear-gradient(top, #cbcbcb 0%,#fbfbfb 100%)"
-        }).css({
-          "background": "-o-linear-gradient(top, #cbcbcb 0%,#fbfbfb 100%)"
-        }).css({
-          "background": "-ms-linear-gradient(top, #cbcbcb 0%,#fbfbfb 100%)"
-        });
-        jQuery(".money-slider a").css({
-          "width": "16px",
-          "height": "16px",
-          "background": "#df0909",
-          "border-radius": "8px",
-          "border": "1px solid #E42C2A",
-          "display": "block",
-          "position": "absolute",
-          "margin": "-4px 0 0 -8px",
-          "z-index": "10",
-          "cursor": "move"
-        }).css({
-          "background-image": "-webkit-gradient(linear, left top, left bottom, color-stop(0%, #f62b2b), color-stop(100%, #d20202))"
-        }).css({
-          "background-image": "-webkit-linear-gradient(top, #f62b2b, #d20202)"
-        }).css({
-          "background-image": "-moz-linear-gradient(top, #f62b2b, #d20202)"
-        }).css({
-          "background-image": "-ms-linear-gradient(top, #f62b2b, #d20202)"
-        }).css({
-          "background-image": "-o-linear-gradient(top, #f62b2b, #d20202)"
-        }).css({
-          "background-image": "linear-gradient(top, #f62b2b, #d20202)"
-        });
         jQuery("#money-bubble-value").mousedown(this.onmousedown);
         jQuery(window).mouseup(this.onmouseup);
         jQuery(window).mousemove(this.onmousemove);
         this.throttled_render = jQuery.throttle(150, false, function(money_value) {
           return this.render_table(money_value);
+        });
+        jQuery("#result-table-space table td").css({
+          "padding": "8px 5px"
+        });
+        jQuery("#custom-dip-filter input").change(function() {
+          _this.previous_value = -1;
+          return _this.onslide(null, {
+            value: jQuery(".money-slider").slider("value")
+          });
         });
         jQuery(".money-slider").slider("value", 14);
         this.onslide(null, {
@@ -231,13 +201,15 @@
       };
 
       Calculator.prototype.render_table = function(issue_value) {
-        var fee_cash, interest_plus_fee, loan_type, loan_type_code, row, rows, table, total, week, _i, _len, _ref;
+        var a, b, c, detailed_fees, fee_admin, fee_cash, instalment_last, interest, interest_plus_fee, interest_rate, loan_type, loan_type_code, loan_type_text, row, rows, table, total, week, _i, _len, _ref;
         rows = [];
-        if (jQuery('#non-money-transfer').is(':checked')) {
-          loan_type = "bezhotovostní";
+        if (jQuery('#custom-filter-bank-transfer').is(':checked')) {
+          loan_type = '<div class="bankTransfer replacement">Bankovní převod</div>';
+          loan_type_text = 'bezhotovostní';
           loan_type_code = "mt";
         } else {
-          loan_type = "hotovostní";
+          loan_type = '<div class="homeService replacement">Výběr v domácnosti</div>';
+          loan_type_text = 'hotovostní';
           loan_type_code = "hc";
         }
         _ref = [45, 60, 100];
@@ -257,9 +229,16 @@
             }
           }
           row = this.row_string;
+          fee_admin = this.table[loan_type_code][week][issue_value]["fee_admin"];
+          interest = this.table[loan_type_code][week][issue_value]["interest"];
+          interest_rate = week === 45 ? 20.108 : (week === 60 ? 19.975 : 19.975);
+          detailed_fees = "Poplatek za zpracování<br>" + (NumberFormat.format(fee_admin)) + " Kč<br>Úrok<br>" + (NumberFormat.format(interest)) + " Kč<br>Roční fixní úroková sazba<br>" + (NumberFormat.format(interest_rate, 3)) + " %";
           row = row.replace("_LOAN_TYPE", loan_type);
+          row = row.replace("_DETAILED_FEES", detailed_fees);
           row = row.replace("_ISSUE_VALUE", "" + (NumberFormat.format(issue_value)) + " Kč");
           row = row.replace("_WEEKS", week);
+          instalment_last = this.table[loan_type_code][week][issue_value]["instalment_last"];
+          row = row.replace("_INSTALMENT_LAST", "" + (NumberFormat.format(instalment_last)) + " Kč");
           row = row.replace("_INSTALMENT", "" + (NumberFormat.format(this.table[loan_type_code][week][issue_value]["instalment"])) + " Kč");
           interest_plus_fee = this.table[loan_type_code][week][issue_value]["interest"] + this.table[loan_type_code][week][issue_value]["fee_admin"];
           row = row.replace("_INTEREST_PLUS_FEE", "" + (NumberFormat.format(interest_plus_fee)) + " Kč");
@@ -270,10 +249,46 @@
           }
           row = row.replace("_FEE_CASH", "" + (NumberFormat.format(fee_cash)) + " Kč");
           row = row.replace("_TOTAL", "" + (NumberFormat.format(total)) + " Kč");
+          a = issue_value / 1000 - 2;
+          b = week === 45 ? 2 : (week === 60 ? 3 : 4);
+          c = loan_type_code === "mt" ? 0 : 1;
+          row = row.replace("_CHOOSE", "<a class='button rosy medium' href='http://www.provident.cz/loan_applications/select/" + a + "/" + b + "/" + c + "'>zvolit</a> ");
           rows.push(row);
         }
         table = this.table_string;
-        return jQuery("#result-table-space").html(table.replace("_ROW", rows.join("")));
+        table = table.replace("_LOAN_TYPE_TEXT", loan_type_text);
+        table = table.replace("_ISSUE_VALUE", "" + (NumberFormat.format(issue_value)) + " Kč");
+        table = table.replace("_ROW", rows.join(""));
+        jQuery("#result-table-space").html(table);
+        jQuery("#result-table-space .help").click(function() {
+          return false;
+        });
+        return jQuery("#result-table-space .help").simpletip({
+          position: "top",
+          offset: [0, -15],
+          onBeforeShow: function() {
+            switch (this.getParent().attr("data-name")) {
+              case "type":
+                return this.update(' seconds have elapsed in this minute.');
+              case "loan":
+                return this.update('Částka, kterou si přejete půjčit');
+              case "weeks":
+                return this.update('Počet týdnů - období, ve kterém si přejete půjčku splácet.');
+              case "week":
+                return this.update('Částka, kterou budete splácet každý týden.');
+              case "apr":
+                return this.update('RPSN = Roční procentuální sazba nákladů.<br><br>Způsob výpočtu RPSN stanoví evropská direktiva. Na jejím základě přijala ČR Zákon o spotřebitelském úvěru č. 145/2010 Sb, který vstoupil v účinnost dne 1. 1. 2011. Tento nový zákon určuje, že veškeré náklady spojené s půjčkou, kromě nepovinných doplňkových služeb, musí být zahrnuty do RPSN. Služba obchodního zástupce je doplňková, není povinnou součástí půjčky a z tohoto důvodu není zahrnuta do RPSN. Službu obchodního zástupce není zákazník povinnen odebrat.');
+              case "cash":
+                return this.update('Osobní služba Vašeho obchodního zástupce, který vám přinese hotovost až domů a pravidelně vás navštěvuje kvůli výběru splátek.<br><br>Poplatek za hotovostní inkasní službu není v RPSN započítán, protože tato služba je dle Zákona o spotřebitelském úvěru č. 145/2010 Sb službou doplňkovou, není tak povinnou součástí půjčky a z tohoto důvodu není zahrnuta do RPSN.');
+              case "total":
+                return this.update('Celková splatná částka');
+              case "weekinst":
+                return this.update('Zahrnuje i poměrnou část nákladů na volitelnou hotovostní inkasní službu.<br>Poslední splátka ' + this.getParent().attr("data-values"));
+              case "intplusfee":
+                return this.update(this.getParent().attr("data-values"));
+            }
+          }
+        });
       };
 
       return Calculator;
@@ -286,6 +301,9 @@
 
 
   (function(b,c){var $=b.jQuery||b.Cowboy||(b.Cowboy={}),a;$.throttle=a=function(e,f,j,i){var h,d=0;if(typeof f!=="boolean"){i=j;j=f;f=c}function g(){var o=this,m=+new Date()-d,n=arguments;function l(){d=+new Date();j.apply(o,n)}function k(){h=c}if(i&&!h){l()}h&&clearTimeout(h);if(i===c&&m>e){l()}else{if(f!==true){h=setTimeout(i?k:l,i===c?e-m:e)}}}if($.guid){g.guid=j.guid=j.guid||$.guid++}return g};$.debounce=function(d,e,f){return f===c?a(d,e,false):a(d,f,e!==false)}})(this);;
+
+
+  (function($){function Simpletip(elem,conf){var self=this;elem=jQuery(elem);var tooltip=jQuery(document.createElement('div')).addClass(conf.baseClass).addClass((conf.fixed)?conf.fixedClass:'').addClass((conf.persistent)?conf.persistentClass:'').html(conf.content).appendTo(elem);if(!conf.hidden)tooltip.show();else tooltip.hide();if(!conf.persistent){elem.hover(function(event){self.show(event)},function(){self.hide()});if(!conf.fixed){elem.mousemove(function(event){if(tooltip.css('display')!=='none')self.updatePos(event);});};}else{elem.click(function(event){if(event.target===elem.get(0)){if(tooltip.css('display')!=='none')self.hide();else self.show();};});jQuery(window).mousedown(function(event){if(tooltip.css('display')!=='none'){var check=(conf.focus)?jQuery(event.target).parents('.tooltip').andSelf().filter(function(){return this===tooltip.get(0)}).length:0;if(check===0)self.hide();};});};jQuery.extend(self,{getVersion:function(){return[1,2,0];},getParent:function(){return elem;},getTooltip:function(){return tooltip;},getPos:function(){return tooltip.offset();},setPos:function(posX,posY){var elemPos=elem.offset();if(typeof posX=='string')posX=parseInt(posX)+elemPos.left;if(typeof posY=='string')posY=parseInt(posY)+elemPos.top;tooltip.css({left:posX,top:posY});return self;},show:function(event){conf.onBeforeShow.call(self);self.updatePos((conf.fixed)?null:event);switch(conf.showEffect){case'fade':tooltip.fadeIn(conf.showTime);break;case'slide':tooltip.slideDown(conf.showTime,self.updatePos);break;case'custom':conf.showCustom.call(tooltip,conf.showTime);break;default:case'none':tooltip.show();break;};tooltip.addClass(conf.activeClass);conf.onShow.call(self);return self;},hide:function(){conf.onBeforeHide.call(self);switch(conf.hideEffect){case'fade':tooltip.fadeOut(conf.hideTime);break;case'slide':tooltip.slideUp(conf.hideTime);break;case'custom':conf.hideCustom.call(tooltip,conf.hideTime);break;default:case'none':tooltip.hide();break;};tooltip.removeClass(conf.activeClass);conf.onHide.call(self);return self;},update:function(content){tooltip.html(content);conf.content=content;return self;},load:function(uri,data){conf.beforeContentLoad.call(self);tooltip.load(uri,data,function(){conf.onContentLoad.call(self);});return self;},boundryCheck:function(posX,posY){var newX=posX+tooltip.outerWidth();var newY=posY+tooltip.outerHeight();var windowWidth=jQuery(window).width()+jQuery(window).scrollLeft();var windowHeight=jQuery(window).height()+jQuery(window).scrollTop();return[(newX>=windowWidth),(newY>=windowHeight)];},updatePos:function(event){var tooltipWidth=tooltip.outerWidth();var tooltipHeight=tooltip.outerHeight();if(!event&&conf.fixed){if(conf.position.constructor==Array){posX=parseInt(conf.position[0]);posY=parseInt(conf.position[1]);}else if(jQuery(conf.position).attr('nodeType')===1){var offset=jQuery(conf.position).offset();posX=offset.left;posY=offset.top;}else{var elemPos=elem.offset();var elemWidth=elem.outerWidth();var elemHeight=elem.outerHeight();switch(conf.position){case'top':var posX=elemPos.left-(tooltipWidth/2)+(elemWidth/2);var posY=elemPos.top-tooltipHeight;break;case'bottom':var posX=elemPos.left-(tooltipWidth/2)+(elemWidth/2);var posY=elemPos.top+elemHeight;break;case'left':var posX=elemPos.left-tooltipWidth;var posY=elemPos.top-(tooltipHeight/2)+(elemHeight/2);break;case'right':var posX=elemPos.left+elemWidth;var posY=elemPos.top-(tooltipHeight/2)+(elemHeight/2);break;default:case'default':var posX=(elemWidth/2)+elemPos.left+20;var posY=elemPos.top;break;};};}else{var posX=event.pageX;var posY=event.pageY;};if(typeof conf.position!='object'){posX=posX+conf.offset[0];posY=posY+conf.offset[1];if(conf.boundryCheck){var overflow=self.boundryCheck(posX,posY);if(overflow[0])posX=posX-(tooltipWidth/2)-(2*conf.offset[0]);if(overflow[1])posY=posY-(tooltipHeight/2)-(2*conf.offset[1]);}}else{if(typeof conf.position[0]=="string")posX=String(posX);if(typeof conf.position[1]=="string")posY=String(posY);};self.setPos(posX,posY);return self;}});};jQuery.fn.simpletip=function(conf){var api=jQuery(this).eq(typeof conf=='number'?conf:0).data("simpletip");if(api)return api;var defaultConf={content:'A simple tooltip',persistent:false,focus:false,hidden:true,position:'default',offset:[0,0],boundryCheck:true,fixed:true,showEffect:'fade',showTime:150,showCustom:null,hideEffect:'fade',hideTime:150,hideCustom:null,baseClass:'tooltip',activeClass:'active',fixedClass:'fixed',persistentClass:'persistent',focusClass:'focus',onBeforeShow:function(){},onShow:function(){},onBeforeHide:function(){},onHide:function(){},beforeContentLoad:function(){},onContentLoad:function(){}};jQuery.extend(defaultConf,conf);this.each(function(){var el=new Simpletip(jQuery(this),defaultConf);jQuery(this).data("simpletip",el);});return this;};})();;
 
 
 }).call(this);

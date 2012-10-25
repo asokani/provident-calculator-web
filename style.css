@@ -1,0 +1,202 @@
+.money-slider {
+    width: 100%;
+    height: 10px;
+    border: 1px solid #b1b1b1;
+    position: relative;
+    border-radius: 5px;
+    background: #cbcbcb;
+
+    background: -moz-linear-gradient(top, #cbcbcb 0%, #fbfbfb 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cbcbcb), color-stop(100%,#fbfbfb));
+    background: -webkit-linear-gradient(top, #cbcbcb 0%,#fbfbfb 100%);
+    background: -o-linear-gradient(top, #cbcbcb 0%,#fbfbfb 100%);
+    background: -ms-linear-gradient(top, #cbcbcb 0%,#fbfbfb 100%);
+}
+#money-slider-holder {
+    padding:70px 0 20px 0;
+    position:relative;
+}
+.money-slider a {
+    width: 20px;
+    height: 20px;
+    background: #df0909;
+    border-radius: 10px;
+    border: 1px solid #E42C2A;
+    display: block;
+    position: absolute;
+    margin: -6px 0 0 -10px;
+    z-index: 10;
+    cursor: move;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f62b2b), color-stop(100%, #d20202));
+    background-image: -webkit-linear-gradient(top, #f62b2b, #d20202);
+    background-image: -moz-linear-gradient(top, #f62b2b, #d20202);
+    background-image: -ms-linear-gradient(top, #f62b2b, #d20202);
+    background-image: -o-linear-gradient(top, #f62b2b, #d20202);
+    background-image: linear-gradient(top, #f62b2b, #d20202);
+}
+
+#result-table-space table {
+    margin: 20px 0 50px;
+    border-collapse: collapse;
+}
+#result-table-space table th {
+    padding: 8px 5px;
+    text-align: center;
+    border: 1px solid #cbcbcb;
+}
+#result-table-space table td {
+    padding: 8px 5px 8px;
+    text-align: center;
+    border: 1px solid #cbcbcb;
+    vertical-align: middle;
+}
+
+#loan-type-text {
+    color: #0059A1;
+    font-size: 16px;
+    font-weight: bold;
+    height: 16px;
+    padding: 15px 0;
+    border-top: 1px solid #cbcbcb;
+    border-bottom: 5px solid #cbcbcb;
+}
+
+#result-table-space table .help:hover {
+    background: url(https://www.provident.cz/img/site/layout/loan-results/help_btn_sml_over_ie.png) center no-repeat;
+}
+#result-table-space table .help {
+    background: url(https://www.provident.cz/img/site/layout/loan-results/help_btn_sml_ie.png) center no-repeat;
+    cursor: help;
+    height: 19px;
+    width: 18px;
+    display: block;
+    margin: 10px auto 0;
+}
+#result-table-space table td .help {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0;
+}
+
+#result-table-space table .rosy:hover {
+    background: #BA4B58;
+    background: -webkit-gradient(linear, left top, left bottom, from(#CF5D6A), to(#A53845));
+    background: -moz-linear-gradient(top, #CF5D6A, #A53845);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cf5d6a', endColorstr='#a53845');
+}
+#result-table-space table .button:hover {
+    text-decoration: none;
+}
+#result-table-space table .rosy {
+    color: #FAE7E9;
+    border: solid 1px #B73948;
+    background: #DA5867;
+    background: -webkit-gradient(linear, left top, left bottom, from(#F16C7C), to(#BF404F));
+    background: -moz-linear-gradient(top, #F16C7C, #BF404F);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f16c7c', endColorstr='#bf404f');
+}
+#result-table-space table .button {
+    display: inline;
+    zoom: 1;
+    vertical-align: middle;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+#result-table-space table .medium {
+    font-size: 14px;
+    padding: .4em .5em .42em;
+}
+#result-table-space table tr div.tooltip {
+    background: white;
+    border:1px solid #cbcbcb;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    line-height: 15px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#result-table-space  .homeService {
+    background: url(https://www.provident.cz/img/site/layout/loan-results/home_coll_icon.png) no-repeat;
+    height: 31px;
+    margin: 0 auto;
+    width: 35px;
+}
+
+
+#result-table-space  .bankTransfer {
+    background: url(https://www.provident.cz/img/site/layout/loan-results/bank_trans_icon.png) no-repeat;
+    height: 31px;
+    margin: 0 auto;
+    width: 35px;
+}
+
+#custom-filter-bank-transfer-label {
+    color: #0059A1;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    height: 31px;
+    line-height: 31px;
+    padding-left: 55px;
+    background-position: 10px 0;
+    background-repeat: no-repeat;
+    background-image: url(https://www.provident.cz/img/site/layout/loan-results/home_coll_icon.png);
+}
+
+#custom-filter-home-collect-label {
+    color: #0059A1;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    height: 31px;
+    line-height: 31px;
+    padding-left: 55px;
+    background-position: 10px 0;
+    background-repeat: no-repeat;
+    background-image: url(https://www.provident.cz/img/site/layout/loan-results/bank_trans_icon.png);
+
+}
+
+#custom-filters .label {
+    color: #0059A1;
+    clear: both;
+    display: block;
+    font: normal 1.6em HelveticaNeue, Helvetica, Arial, Verdana, sans-serif;
+    margin: 30px 0 10px 0;
+    padding-right: 30px;
+}
+#custom-filters ul {
+    display: block;
+    float: left;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 4px;
+}
+#custom-filters li {
+    padding-right: 32px;
+}
+#custom-filters li {
+    float: left;
+    list-style: none;
+}
+#custom-filters .bullets li {
+    background: url(https://www.provident.cz/img/site/layout/bullet.png) no-repeat 0 0;
+    padding: 8px 0 5px 23px;
+    zoom: 1;
+    font-size: 12px;
+
+}
