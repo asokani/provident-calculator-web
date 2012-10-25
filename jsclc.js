@@ -250,9 +250,13 @@
           row = row.replace("_FEE_CASH", "" + (NumberFormat.format(fee_cash)) + " Kč");
           row = row.replace("_TOTAL", "" + (NumberFormat.format(total)) + " Kč");
           a = issue_value / 1000 - 2;
-          b = week === 45 ? 2 : (week === 60 ? 3 : 4);
+          b = week === 45 ? 2 : 3;
           c = loan_type_code === "mt" ? 0 : 1;
-          row = row.replace("_CHOOSE", "<a class='button rosy medium' href='http://www.provident.cz/loan_applications/select/" + a + "/" + b + "/" + c + "'>zvolit</a> ");
+          if (week === 100) {
+            row = row.replace("_CHOOSE", "<a class='button rosy medium' href='https://www.provident.cz/pages/online-zadost-o-pujcku'>zvolit</a> ");
+          } else {
+            row = row.replace("_CHOOSE", "<a class='button rosy medium' href='http://www.provident.cz/loan_applications/select/" + a + "/" + b + "/" + c + "'>zvolit</a> ");
+          }
           rows.push(row);
         }
         table = this.table_string;

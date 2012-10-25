@@ -19,20 +19,12 @@
 .money-slider a {
     width: 20px;
     height: 20px;
-    background: #df0909;
-    border-radius: 10px;
-    border: 1px solid #E42C2A;
     display: block;
     position: absolute;
-    margin: -6px 0 0 -10px;
+    margin: -5px 0 0 -9px;
     z-index: 10;
     cursor: move;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f62b2b), color-stop(100%, #d20202));
-    background-image: -webkit-linear-gradient(top, #f62b2b, #d20202);
-    background-image: -moz-linear-gradient(top, #f62b2b, #d20202);
-    background-image: -ms-linear-gradient(top, #f62b2b, #d20202);
-    background-image: -o-linear-gradient(top, #f62b2b, #d20202);
-    background-image: linear-gradient(top, #f62b2b, #d20202);
+    background: url(https://providentonline.cz/provident-remote-calc/button.png) no-repeat;
 }
 
 #result-table-space table {
