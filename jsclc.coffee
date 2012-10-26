@@ -331,8 +331,8 @@ jQuery ->
         row = @row_string
         fee_admin = @table[loan_type_code][week][issue_value]["fee_admin"]
         interest = @table[loan_type_code][week][issue_value]["interest"]
-        interest_rate = if week == 45 then 20.108 else (if week == 60 then 19.975 else 19.975)
-        detailed_fees = "Poplatek za zpracování<br>#{NumberFormat.format(fee_admin)} Kč<br>Úrok<br>#{NumberFormat.format(interest)} Kč<br>Roční fixní úroková sazba<br>#{NumberFormat.format(interest_rate, 3)} %"
+        interest_rate = if week == 45 then 20.11 else (if week == 60 then 19.98 else 19.00)
+        detailed_fees = "Poplatek za zpracování<br>#{NumberFormat.format(fee_admin)} Kč<br>Úrok<br>#{NumberFormat.format(interest)} Kč<br>Roční fixní úroková sazba<br>#{NumberFormat.format(interest_rate, 2)} %"
         row = row.replace("_LOAN_TYPE", loan_type)
         row = row.replace("_DETAILED_FEES", detailed_fees)
         row = row.replace("_ISSUE_VALUE", "#{NumberFormat.format(issue_value)} Kč")
@@ -371,7 +371,7 @@ jQuery ->
         onBeforeShow: ->
           switch this.getParent().attr("data-name")
             when "type"
-              this.update(' seconds have elapsed in this minute.');
+              this.update('<ul class="dip-results-help"><li class="home-collect">Hotovostní varianta</li><li class="bank-transfer">Bezhotovostní varianta</li></ul>');
             when "loan"
               this.update('Částka, kterou si přejete půjčit');
             when "weeks"

@@ -231,8 +231,8 @@
           row = this.row_string;
           fee_admin = this.table[loan_type_code][week][issue_value]["fee_admin"];
           interest = this.table[loan_type_code][week][issue_value]["interest"];
-          interest_rate = week === 45 ? 20.108 : (week === 60 ? 19.975 : 19.975);
-          detailed_fees = "Poplatek za zpracování<br>" + (NumberFormat.format(fee_admin)) + " Kč<br>Úrok<br>" + (NumberFormat.format(interest)) + " Kč<br>Roční fixní úroková sazba<br>" + (NumberFormat.format(interest_rate, 3)) + " %";
+          interest_rate = week === 45 ? 20.11 : (week === 60 ? 19.98 : 19.00);
+          detailed_fees = "Poplatek za zpracování<br>" + (NumberFormat.format(fee_admin)) + " Kč<br>Úrok<br>" + (NumberFormat.format(interest)) + " Kč<br>Roční fixní úroková sazba<br>" + (NumberFormat.format(interest_rate, 2)) + " %";
           row = row.replace("_LOAN_TYPE", loan_type);
           row = row.replace("_DETAILED_FEES", detailed_fees);
           row = row.replace("_ISSUE_VALUE", "" + (NumberFormat.format(issue_value)) + " Kč");
@@ -273,7 +273,7 @@
           onBeforeShow: function() {
             switch (this.getParent().attr("data-name")) {
               case "type":
-                return this.update(' seconds have elapsed in this minute.');
+                return this.update('<ul class="dip-results-help"><li class="home-collect">Hotovostní varianta</li><li class="bank-transfer">Bezhotovostní varianta</li></ul>');
               case "loan":
                 return this.update('Částka, kterou si přejete půjčit');
               case "weeks":
