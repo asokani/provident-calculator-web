@@ -186,7 +186,7 @@ jQuery ->
 				  
     slider_string: """
 <p style="margin:0.5em 0 1em;color: #0059A1;font-size: 18px;">Zvolte si výši půjčky</p>
-<div style="" id="money-slider-holder">
+<div style="position: relative;" id="money-slider-holder">
   <div style="position:absolute;height:0;" id="money-bubble-value">
     <div style="background: #E42C2A;color:white;font-size: 1.5em;cursor:move;white-space:nowrap;position:relative;left:-50%;border-radius:5px;padding:10px;top:-65px;">
     	 <span class="value"></span>
