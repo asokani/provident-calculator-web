@@ -239,7 +239,7 @@
             total = this.table[week][nearest_valid_value]["total"];
           }
           row = this.row_string;
-          fee_admin = this.table[week][issue_value]["fee_admin"];
+          fee_admin = this.table[week][issue_value]["fee"];
           interest = this.table[week][issue_value]["interest"];
           interest_rate = week === 45 ? 22.90 : (week === 60 ? 22.38 : 21.50);
           detailed_fees = "Administratívny poplatok<br>€" + (NumberFormat.format(fee_admin, 2)) + "<br>Urok<br>€" + (NumberFormat.format(interest, 2)) + "<br>Ročná fixná úroková sadzba<br>" + (NumberFormat.format(interest_rate, 2)) + " %";
