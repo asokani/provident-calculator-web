@@ -309,7 +309,7 @@ jQuery ->
           total = @table[week][nearest_valid_value]["total"]
 
         row = @row_string
-        fee_admin = @table[week][issue_value]["fee_admin"]
+        fee_admin = @table[week][issue_value]["fee"]
         interest = @table[week][issue_value]["interest"]
         interest_rate = if week == 45 then 22.90 else (if week == 60 then 22.38 else 21.50)
         detailed_fees = "Administratívny poplatok<br>€#{NumberFormat.format(fee_admin, 2)}<br>Urok<br>€#{NumberFormat.format(interest, 2)}<br>Ročná fixná úroková sadzba<br>#{NumberFormat.format(interest_rate, 2)} %"
