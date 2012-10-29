@@ -172,18 +172,20 @@ jQuery ->
       <div>
         <span class="label">Zvoľte si formu svojej pôžičky</span>
         <ul style="margin-bottom:20px">
-          <li style="width: 233px;">
+          <li style="float:none;padding:10px 0;">
             <input checked="checked" type="radio" id="custom-filter-home-collect" name="filters" value="HomeCollect">
-            <label for="custom-filter-home-collect" id="custom-filter-bank-transfer-label">Hotovostná
+            <label for="custom-filter-home-collect" id="custom-filter-home-collect-label">Hotovostná bez služby zabezpečenia splátok úveru
             </label>
-            <div class="about"><ul class="bullets"><li>Hotovosť do 48 hodín.</li><li>Peniaze do vlastných rúk pri podpise zmluvy.</li><li>Maximálny komfort, všetko vyriešite z domova.</li></ul></div>
           </li>
-          <li style="width: 233px;">
-            <input type="radio" id="custom-filter-bank-transfer" name="filters" value="BankTransfer">
-            <label for="custom-filter-bank-transfer" id="custom-filter-home-collect-label">Bezhotovostná
+          <li style="float:none;padding:10px 0;">
+            <input checked="checked" type="radio" id="custom-filter-homebank-collect" name="filters" value="HomeBankCollect">
+            <label for="custom-filter-homebank-collect" id="custom-filter-homebank-collect-label">Hotovostná so službou zabezpečenia splátok úveru
             </label>
-            <div class="about"><ul class="bullets"><li>Peniaze najneskôr do 13 dní.</li><li>Peniaze získate na bankový účet.</li><li>Maximálny komfort a súkromie. </li><li>Bezhotovostný spôsob splácania.</li>
-            </ul></div>
+          </li>
+          <li style="float:none;padding:10px 0;">
+            <input type="radio" id="custom-filter-bank-transfer" name="filters" value="BankTransfer">
+            <label for="custom-filter-bank-transfer" id="custom-filter-bank-transfer-label">Bezhotovostná
+            </label>
           </li>
         </ul>
       </div>
@@ -294,7 +296,13 @@ jQuery ->
         loan_type_text = 'bezhotovostnú'
         loan_type_code = "mt"
       else
-        loan_type = '<div class="homeService replacement">Výber v domácnosti</div>'
+        if jQuery('#custom-filter-home-collect').is(':checked')
+          custom_cash = false
+          loan_type = '<div class="homeCollection replacement">Výber v domácnosti</div>'
+        else
+          loan_type = '<div class="homeService replacement">Výber v domácnosti</div>'
+          custom_cash = true
+
         loan_type_text = 'hotovostnú'
         loan_type_code = "hc"
       main_issue_value = issue_value
@@ -324,7 +332,7 @@ jQuery ->
         row = row.replace("_INTEREST_PLUS_FEE", "€#{NumberFormat.format(fee_admin, 2)}")
         row = row.replace("_APR", "#{NumberFormat.format(@table[week][issue_value]['apr'], 2)} %")
         fee_cash = @table[week][issue_value]["fee_cash"]
-        if loan_type_code == "mt"
+        if loan_type_code == "mt" or not custom_cash
           row = row.replace("_FEE_CASH", "-")
         else
           row = row.replace("_FEE_CASH", "€#{NumberFormat.format(fee_cash,2)}")

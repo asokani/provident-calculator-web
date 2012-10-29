@@ -121,22 +121,46 @@
     font-weight: bold;
 }
 
-#result-table-space  .homeService {
-    background: url(https://www.provident.cz/img/site/layout/loan-results/home_coll_icon.png) no-repeat;
+#result-table-space .homeService {
+    background: url(https://www.provident.cz/img/site/layout/loan-results/home_coll_icon.png) center no-repeat;
     height: 31px;
     margin: 0 auto;
-    width: 35px;
+    width: 40px;
+}
+
+#result-table-space  .homeCollection {
+    background: url(https://www.provident.cz/img/site/layout/loan-results/cash_loan_icon.png) center no-repeat;
+    height: 31px;
+    margin: 0 auto;
+    width: 40px;
 }
 
 
 #result-table-space  .bankTransfer {
-    background: url(https://www.provident.cz/img/site/layout/loan-results/bank_trans_icon.png) no-repeat;
+    background: url(https://www.provident.cz/img/site/layout/loan-results/bank_trans_icon.png) center no-repeat;
     height: 31px;
     margin: 0 auto;
-    width: 35px;
+    width: 40px;
 }
 
-#custom-filter-bank-transfer-label {
+
+
+
+#custom-filter-home-collect-label {
+    color: #0059A1;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    height: 31px;
+    line-height: 31px;
+    padding-left: 55px;
+    background-position: 10px 0;
+    background-repeat: no-repeat;
+    background-image: url(https://www.provident.sk/img/site/layout/loan-results/cash_loan_icon.png);
+
+}
+
+#custom-filter-homebank-collect-label {
     color: #0059A1;
     display: inline-block;
     font-size: 16px;
@@ -149,7 +173,7 @@
     background-image: url(https://www.provident.cz/img/site/layout/loan-results/home_coll_icon.png);
 }
 
-#custom-filter-home-collect-label {
+#custom-filter-bank-transfer-label {
     color: #0059A1;
     display: inline-block;
     font-size: 16px;
@@ -160,7 +184,6 @@
     background-position: 10px 0;
     background-repeat: no-repeat;
     background-image: url(https://www.provident.cz/img/site/layout/loan-results/bank_trans_icon.png);
-
 }
 
 #custom-filters .label {

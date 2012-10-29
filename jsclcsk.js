@@ -50,7 +50,7 @@
 
       Calculator.prototype.row_string = "<tr>\n  <td>_LOAN_TYPE</td>\n  <td style=\"color: #0059A1;font-size: 21px;font-weight: bold;text-align: center;\">_ISSUE_VALUE</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_WEEKS</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_INSTALMENT <a data-values=\"_INSTALMENT_LAST\" data-name=\"weekinst\" class=\"help\" href=\"#\"></a></td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_INTEREST_PLUS_FEE <a data-values=\"_DETAILED_FEES\" data-name=\"intplusfee\" class=\"help\" href=\"#\"></a></td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_APR</td>\n  <td style=\"font-size:17px;text-align:center;color: #0059A1;\">_FEE_CASH</td>\n  <td style=\"font-weight: bold;font-size:18px;text-align:center;color: #0059A1;\">_TOTAL</td>\n  <td>_CHOOSE</td>\n</tr>";
 
-      Calculator.prototype.slider_string = "<p style=\"margin:0.5em 0 1em;color: #0059A1;font-size: 18px;\">Zvoľte si výšku pôžičky</p>\n<div style=\"position: relative;\" id=\"money-slider-holder\">\n  <div style=\"position:absolute;height:0;\" id=\"money-bubble-value\">\n    <div style=\"background: #E42C2A;color:white;font-size: 1.5em;cursor:move;white-space:nowrap;position:relative;left:-50%;border-radius:5px;padding:10px;top:-65px;\">\n    	 <span class=\"value\"></span>\n    </div>\n  <div style=\"position:absolute;top:-30px;left:-8px;width: 0;height: 0;	border-left: 8px solid transparent; border-right: 8px solid transparent;border-top: 12px solid #E42C2A;\"></div>\n  </div>\n  <div class=\"money-slider\"></div>\n  <div style=\"float:left;margin:8px 0 0 0;\">€140</div>\n  <div style=\"float:right;margin:8px 0 0 0;\">€2 300</div>\n\n\n</div>\n<div id=\"custom-dip-filter\">\n  <div id=\"custom-filters\" style=\"float:none;\">\n    <div id=\"custom-filter-bar\" class=\"clearfix\">\n      <div>\n        <span class=\"label\">Zvoľte si formu svojej pôžičky</span>\n        <ul style=\"margin-bottom:20px\">\n          <li style=\"width: 233px;\">\n            <input checked=\"checked\" type=\"radio\" id=\"custom-filter-home-collect\" name=\"filters\" value=\"HomeCollect\">\n            <label for=\"custom-filter-home-collect\" id=\"custom-filter-bank-transfer-label\">Hotovostná\n            </label>\n            <div class=\"about\"><ul class=\"bullets\"><li>Hotovosť do 48 hodín.</li><li>Peniaze do vlastných rúk pri podpise zmluvy.</li><li>Maximálny komfort, všetko vyriešite z domova.</li></ul></div>\n          </li>\n          <li style=\"width: 233px;\">\n            <input type=\"radio\" id=\"custom-filter-bank-transfer\" name=\"filters\" value=\"BankTransfer\">\n            <label for=\"custom-filter-bank-transfer\" id=\"custom-filter-home-collect-label\">Bezhotovostná\n            </label>\n            <div class=\"about\"><ul class=\"bullets\"><li>Peniaze najneskôr do 13 dní.</li><li>Peniaze získate na bankový účet.</li><li>Maximálny komfort a súkromie. </li><li>Bezhotovostný spôsob splácania.</li>\n            </ul></div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>";
+      Calculator.prototype.slider_string = "<p style=\"margin:0.5em 0 1em;color: #0059A1;font-size: 18px;\">Zvoľte si výšku pôžičky</p>\n<div style=\"position: relative;\" id=\"money-slider-holder\">\n  <div style=\"position:absolute;height:0;\" id=\"money-bubble-value\">\n    <div style=\"background: #E42C2A;color:white;font-size: 1.5em;cursor:move;white-space:nowrap;position:relative;left:-50%;border-radius:5px;padding:10px;top:-65px;\">\n    	 <span class=\"value\"></span>\n    </div>\n  <div style=\"position:absolute;top:-30px;left:-8px;width: 0;height: 0;	border-left: 8px solid transparent; border-right: 8px solid transparent;border-top: 12px solid #E42C2A;\"></div>\n  </div>\n  <div class=\"money-slider\"></div>\n  <div style=\"float:left;margin:8px 0 0 0;\">€140</div>\n  <div style=\"float:right;margin:8px 0 0 0;\">€2 300</div>\n\n\n</div>\n<div id=\"custom-dip-filter\">\n  <div id=\"custom-filters\" style=\"float:none;\">\n    <div id=\"custom-filter-bar\" class=\"clearfix\">\n      <div>\n        <span class=\"label\">Zvoľte si formu svojej pôžičky</span>\n        <ul style=\"margin-bottom:20px\">\n          <li style=\"float:none;padding:10px 0;\">\n            <input checked=\"checked\" type=\"radio\" id=\"custom-filter-home-collect\" name=\"filters\" value=\"HomeCollect\">\n            <label for=\"custom-filter-home-collect\" id=\"custom-filter-home-collect-label\">Hotovostná bez služby zabezpečenia splátok úveru\n            </label>\n          </li>\n          <li style=\"float:none;padding:10px 0;\">\n            <input checked=\"checked\" type=\"radio\" id=\"custom-filter-homebank-collect\" name=\"filters\" value=\"HomeBankCollect\">\n            <label for=\"custom-filter-homebank-collect\" id=\"custom-filter-homebank-collect-label\">Hotovostná so službou zabezpečenia splátok úveru\n            </label>\n          </li>\n          <li style=\"float:none;padding:10px 0;\">\n            <input type=\"radio\" id=\"custom-filter-bank-transfer\" name=\"filters\" value=\"BankTransfer\">\n            <label for=\"custom-filter-bank-transfer\" id=\"custom-filter-bank-transfer-label\">Bezhotovostná\n            </label>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>";
 
       function Calculator() {
         this.onmousemove = __bind(this.onmousemove, this);
@@ -213,14 +213,20 @@
       };
 
       Calculator.prototype.render_table = function(issue_value) {
-        var a, b, c, detailed_fees, fee_admin, fee_cash, instalment_last, interest, interest_rate, loan_type, loan_type_code, loan_type_text, main_issue_value, nearest_valid_value, row, rows, table, total, week, _i, _len, _ref;
+        var a, b, c, custom_cash, detailed_fees, fee_admin, fee_cash, instalment_last, interest, interest_rate, loan_type, loan_type_code, loan_type_text, main_issue_value, nearest_valid_value, row, rows, table, total, week, _i, _len, _ref;
         rows = [];
         if (jQuery('#custom-filter-bank-transfer').is(':checked')) {
           loan_type = '<div class="bankTransfer replacement">Bankový prevod</div>';
           loan_type_text = 'bezhotovostnú';
           loan_type_code = "mt";
         } else {
-          loan_type = '<div class="homeService replacement">Výber v domácnosti</div>';
+          if (jQuery('#custom-filter-home-collect').is(':checked')) {
+            custom_cash = false;
+            loan_type = '<div class="homeCollection replacement">Výber v domácnosti</div>';
+          } else {
+            loan_type = '<div class="homeService replacement">Výber v domácnosti</div>';
+            custom_cash = true;
+          }
           loan_type_text = 'hotovostnú';
           loan_type_code = "hc";
         }
@@ -254,7 +260,7 @@
           row = row.replace("_INTEREST_PLUS_FEE", "€" + (NumberFormat.format(fee_admin, 2)));
           row = row.replace("_APR", "" + (NumberFormat.format(this.table[week][issue_value]['apr'], 2)) + " %");
           fee_cash = this.table[week][issue_value]["fee_cash"];
-          if (loan_type_code === "mt") {
+          if (loan_type_code === "mt" || !custom_cash) {
             row = row.replace("_FEE_CASH", "-");
           } else {
             row = row.replace("_FEE_CASH", "€" + (NumberFormat.format(fee_cash, 2)));
