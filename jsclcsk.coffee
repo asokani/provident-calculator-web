@@ -377,7 +377,7 @@ jQuery ->
             when "apr"
               this.update('RPMN - ročná percentuálna miera nákladov');
             when "cash"
-              this.update('Voliteľne nebudete musieť priniesť každý týždeň splátku k nám, ale náš obchodný zástupca Vás navštívi doma.');
+              this.update('Voliteľne nebudete musieť poslať každý týždeň splátku na náš  bankový účet, ale náš obchodný zástupca vás navštívi doma.');
             when "total"
               this.update('Celková splatná suma');
             when "weekinst"

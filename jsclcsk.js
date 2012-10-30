@@ -311,7 +311,7 @@
               case "apr":
                 return this.update('RPMN - ročná percentuálna miera nákladov');
               case "cash":
-                return this.update('Voliteľne nebudete musieť priniesť každý týždeň splátku k nám, ale náš obchodný zástupca Vás navštívi doma.');
+                return this.update('Voliteľne nebudete musieť poslať každý týždeň splátku na náš  bankový účet, ale náš obchodný zástupca vás navštívi doma.');
               case "total":
                 return this.update('Celková splatná suma');
               case "weekinst":
