@@ -72,7 +72,7 @@
           min: 0,
           max: 61
         });
-        jQuery('head').append('<link rel="stylesheet" href="style.css" type="text/css" />');
+        jQuery('head').append('<link rel="stylesheet" href="https://providentonline.cz/provident-remote-calc/style.css" type="text/css" />');
         jQuery(".money-slider").append('<div id="money-slider-fill" style="border-radius:5px;background:#df0909;opacity:0.6;position:absolute;top:0;z-index:5;width:0px;height:10px"></div>');
         jQuery("#money-bubble-value").mousedown(this.onmousedown);
         jQuery(window).mouseup(this.onmouseup);
