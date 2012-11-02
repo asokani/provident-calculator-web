@@ -136,7 +136,7 @@
     width: 35px;
 }
 
-#custom-filter-bank-transfer-label {
+#custom-filter-home-collect-label {
     color: #0059A1;
     display: inline-block;
     font-size: 16px;
@@ -149,7 +149,7 @@
     background-image: url(https://www.provident.cz/img/site/layout/loan-results/home_coll_icon.png);
 }
 
-#custom-filter-home-collect-label {
+#custom-filter-bank-transfer-label {
     color: #0059A1;
     display: inline-block;
     font-size: 16px;

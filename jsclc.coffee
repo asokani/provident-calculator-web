@@ -207,13 +207,13 @@ jQuery ->
         <ul style="margin-bottom:20px">
           <li style="width: 233px;">
             <input checked="checked" type="radio" id="custom-filter-home-collect" name="filters" value="HomeCollect">
-            <label for="custom-filter-home-collect" id="custom-filter-bank-transfer-label">Hotovostní
+            <label for="custom-filter-home-collect" id="custom-filter-home-collect-label">Hotovostní
             </label>
             <div class="about"><ul class="bullets"><li>Hotovost do 48 hodin.</li><li>Peníze do vlastních rukou při podpisu smlouvy.</li><li>Maximální komfort, vše vyřešíte z domova.</li><li>Splátky osobně obchodnímu zástupce.</li></ul></div>
           </li>
           <li style="width: 233px;">
             <input type="radio" id="custom-filter-bank-transfer" name="filters" value="BankTransfer">
-            <label for="custom-filter-bank-transfer" id="custom-filter-home-collect-label">Bezhotovostní
+            <label for="custom-filter-bank-transfer" id="custom-filter-bank-transfer-label">Bezhotovostní
             </label>
             <div class="about"><ul class="bullets"><li>Peníze nejpozději do 13 dnů.</li><li>Peníze získáte na bankovní účet.</li><li>Maximální komfort a soukromí.</li><li>Bezhotovostní způsob splácení.</li>
             </ul></div>
@@ -235,7 +235,8 @@ jQuery ->
         min: 0,
         max: 61
       });
-      jQuery('head').append('<link rel="stylesheet" href="https://providentonline.cz/provident-remote-calc/style.css" type="text/css" />');
+      #https://providentonline.cz/provident-remote-calc/
+      jQuery('head').append('<link rel="stylesheet" href="style.css" type="text/css" />');
       jQuery(".money-slider").append('<div id="money-slider-fill" style="border-radius:5px;background:#df0909;opacity:0.6;position:absolute;top:0;z-index:5;width:0px;height:10px"></div>')
 
       jQuery("#money-bubble-value").mousedown(this.onmousedown)
