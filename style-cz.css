@@ -30,17 +30,20 @@
 #result-table-space table {
     margin: 20px 0 50px;
     border-collapse: collapse;
+    position: relative;
 }
 #result-table-space table th {
     padding: 8px 5px;
     text-align: center;
     border: 1px solid #cbcbcb;
+    position: relative;
 }
 #result-table-space table td {
     padding: 8px 5px 8px;
     text-align: center;
     border: 1px solid #cbcbcb;
     vertical-align: middle;
+    position: relative;
 }
 
 #loan-type-text {
@@ -111,6 +114,7 @@
 }
 #result-table-space table tr div.tooltip {
     background: white;
+    position: absolute;
     border:1px solid #cbcbcb;
     padding: 10px;
     border-radius: 5px;
