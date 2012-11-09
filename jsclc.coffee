@@ -371,7 +371,7 @@ jQuery ->
           width: 200,
           padding: 10,
           background: 'white',
-          color: 'black',
+          color: '#0088CE',
           "line-height": "15px",
           "font-size": "12px",
           "text-decoration": "none",
