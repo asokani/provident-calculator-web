@@ -209,7 +209,7 @@ jQuery ->
             <input checked="checked" type="radio" id="custom-filter-home-collect" name="filters" value="HomeCollect">
             <label for="custom-filter-home-collect" id="custom-filter-home-collect-label">Hotovostní
             </label>
-            <div class="about"><ul class="bullets"><li>Hotovost do 48 hodin.</li><li>Peníze do vlastních rukou při podpisu smlouvy.</li><li>Maximální komfort, vše vyřešíte z domova.</li><li>Splátky osobně obchodnímu zástupce.</li></ul></div>
+            <div class="about"><ul class="bullets"><li>Hotovost do 48 hodin.</li><li>Peníze do vlastních rukou při podpisu smlouvy.</li><li>Maximální komfort, vše vyřešíte z domova.</li><li>Splátky osobně obchodnímu zástupci.</li></ul></div>
           </li>
           <li style="width: 233px;">
             <input type="radio" id="custom-filter-bank-transfer" name="filters" value="BankTransfer">
