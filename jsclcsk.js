@@ -246,7 +246,11 @@
               continue;
             }
             issue_value = nearest_valid_value;
-            total = this.table[week][nearest_valid_value]["total"];
+            if (custom_cash) {
+              total = this.table[week][nearest_valid_value]["total_custom"];
+            } else {
+              total = this.table[week][nearest_valid_value]["total"];
+            }
           }
           row = this.row_string;
           fee_admin = this.table[week][issue_value]["fee"];

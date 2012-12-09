@@ -317,7 +317,11 @@ jQuery ->
           if not nearest_valid_value
             continue
           issue_value = nearest_valid_value
-          total = @table[week][nearest_valid_value]["total"]
+          if custom_cash
+            total = @table[week][nearest_valid_value]["total_custom"]
+          else
+            total = @table[week][nearest_valid_value]["total"]
+
 
         row = @row_string
         fee_admin = @table[week][issue_value]["fee"]
